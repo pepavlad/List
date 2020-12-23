@@ -1,7 +1,10 @@
 package com.company;
 
 public class List <T>{
-    public Object[] elements;
+    private Object[] elements;
+    public Object[] getElements(){
+        return elements;
+    }
     public void remove(int index) {
         Object[] newArr = new Object[elements.length];
         for (int i = 0; i < elements.length; i++){
@@ -19,37 +22,37 @@ public class List <T>{
         newArr = newArr2;
         elements = newArr;
     }
-//    public void swapElemByBubbleMethod(Object[] arrOfUsers, int firstIndex, int secondIndex){
-//        Object tmp = arrOfUsers[firstIndex];
-//        arrOfUsers[firstIndex] = arrOfUsers[secondIndex];
-//        arrOfUsers[secondIndex] = tmp;
-//    }
-//    public void sortByQuickSort(Object[] elements, int low, int high){
-//        if (low >= high){
-//            return;
-//        }
-//        int middleIndex = low + (high - low) / 2;
-//        int supElement = (Integer) elements[middleIndex];
-//        int i = low, j = high;
-//        while (i <= j) {
-//            while ((Integer)elements[i] > supElement) {
-//                i++;
-//            }
-//            while ((Integer)elements[i] < supElement) {
-//                j--;
-//            }
-//            if (i <= j) {
-//                swapElemByBubbleMethod(elements, i, j);
-//                i++;
-//                j--;
-//            }
-//        }
-//        if (low < j)
-//            sortByQuickSort(elements, low, j);
-//
-//        if (high > i)
-//            sortByQuickSort(elements, i, high);
-//    }
+   public void swapElemByBubbleMethod(Object[] arrOfUsers, int firstIndex, int secondIndex){
+       Object tmp = arrOfUsers[firstIndex];
+       arrOfUsers[firstIndex] = arrOfUsers[secondIndex];
+       arrOfUsers[secondIndex] = tmp;
+   }
+   public void sortByQuickSort(Object[] elements, int low, int high){
+       if (low >= high){
+           return;
+       }
+       int middleIndex = low + (high - low) / 2;
+       int supElement = (Integer) elements[middleIndex];
+       int i = low, j = high;
+       while (i <= j) {
+           while ((Integer)elements[i] > supElement) {
+               i++;
+           }
+           while ((Integer)elements[j] < supElement) {
+               j--;
+           }
+           if (i <= j) {
+               swapElemByBubbleMethod(elements, i, j);
+               i++;
+               j--;
+           }
+       }
+       if (low < j)
+           sortByQuickSort(elements, low, j);
+
+       if (high > i)
+           sortByQuickSort(elements, i, high);
+   }
     public void add(T element){
         if(elements == null){
             elements = new Object[1];
