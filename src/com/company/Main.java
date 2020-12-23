@@ -10,6 +10,7 @@ public class Main {
         list.remove(1);
         list.show();
         list.addAll(7,8,9);
+        list.sortByQuickSort(list.getElements(), 0, list.getElements().length - 1);
         list.show();
     }
 }
